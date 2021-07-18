@@ -12,8 +12,9 @@ const switchToggle = document.querySelector('#theme-switch-toggle');
 
 function checkTheme() {
   localStorage.theme === Theme.DARK
-    ? document.body.classList.replace('light-theme', 'dark-theme')
-    : document.body.classList.replace('dark-theme', 'light-theme');
+    ? (document.body.classList.replace('light-theme', 'dark-theme'), (switchToggle.checked = true))
+    : (document.body.classList.replace('dark-theme', 'light-theme'),
+      (switchToggle.checked = false));
 }
 
 checkTheme();
